@@ -203,14 +203,9 @@ def hash_generator(path, algorithms=('md5', 'sha1', 'sha224', 'sha256', 'sha384'
 
 
 def hash_compare(files_hashes, MAL_HASHES=MAL_HASHES):
-    #print("\n\n\n\n\n\n\n")
-    #print(files_hashes)
     for file_path, hashes in files_hashes.items():
         for algo, hash_value in hashes.items():
             if hash_value.lower() in MAL_HASHES:
-                #print file path, algo, hash
-                #print(file_path, algo, hash_value)
-                #print(Fore.RED + Style.BRIGHT + f"{file_path} \n {algo}  {hash_value} \n\n")
                 file_name = os.path.basename(file_path)
                 print(
                     f"{os.path.dirname(file_path)}/"
